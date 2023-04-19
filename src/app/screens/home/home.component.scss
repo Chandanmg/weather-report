@@ -1,0 +1,204 @@
+.home{
+    // background-color: rgb(211, 203, 214);
+    background-image: linear-gradient(to right, #1a7aa3 0%, #304d8d  51%, #9b79ea  100%);
+    width: 100%;
+    height: 100%;
+}
+
+mat-card{
+    width: 25%;
+    height: 60%;
+    // background-color: rgb(70, 164, 246);
+    background-image: linear-gradient(to right, #80d3fa 0%, #4382d9  51%, #5acfdf  100%);
+    border-radius: 5%;
+    // opacity: 0.5;
+}
+
+.but{
+    width: 5vw;
+    background-color: rgb(15, 152, 15);
+    color: white;
+    font-size: 0.8vw;
+}
+
+.image{
+    width: 4vw;
+}
+
+input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1vw;
+    border-radius: 1vh;
+    // background-color: #4289c4;
+    // color: aliceblue;
+}
+
+input:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 5px #66afe9;
+}
+
+.name{
+    font-size: 2vw;
+    font-weight: 600;
+    // color: white;
+    background-image: linear-gradient(to right, #86035f 0%, #213859  51%, #d97707  100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.condition{
+    font-size: 1vw;
+    font-weight: 400;
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+
+.degree{
+    font-size: 2vw;
+    font-weight: 600;
+    color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+// .deg{
+//     font-size: 5vh;
+//     font-weight: 600;
+//     color: aliceblue;
+//     font-family: 'Times New Roman', Times, serif;
+// }
+
+.forecast{
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: rgb(56, 43, 43);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.vertical-divider {
+    border-left: 1px solid rgb(229, 226, 226);
+    height: 5vh;
+    border-top: none;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.minmax{
+    font-size: 1vw;
+    color: rgb(130, 9, 118);
+    font-weight: 600;
+}
+
+.num{
+    font-size: 1vw;
+    color: white;
+}
+
+
+.forecastday{
+    color: rgb(108, 80, 39);
+    font-size: 1.2vw;
+    font-weight: 600;
+}
+
+.forecastcond{
+    color: rgb(255, 255, 255);
+    font-size: 1vw;
+    // font-weight: 600;
+}
+
+.forecasttemp{
+    color: rgb(255, 255, 255);
+    font-size: 1vw;
+    // font-weight: 600;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .home{
+        background-image: linear-gradient(to right, #1a7aa3 0%, #304d8d  51%, #9b79ea  100%);
+        width: 100%;
+        height: 100%;
+    }
+
+    mat-card{
+        width: 80%;
+        height: 50%;
+        background-image: linear-gradient(to right, #80d3fa 0%, #4382d9 51%, #5acfdf 100%);
+        border-radius: 5%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+  
+    .but{
+        width: 30%;
+        font-size: 2vw;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+        
+    .image{
+        width: 20%;
+    }
+        
+    input {
+        font-size: 4vw;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+        
+    .name{
+        font-size: 7vw;
+        font-weight: 600;
+    }
+        
+    .condition{
+        font-size: 4vw;
+        font-weight: 400;
+    }
+        
+    .degree{
+        font-size: 7vw;
+        font-weight: 600;
+    }
+        
+    .forecast{
+        font-size: 5vw;
+        font-weight: 500;
+    }
+        
+    .vertical-divider {
+        height: 2vh;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+        
+    .minmax{
+        font-size: 4vw;
+        font-weight: 600;
+    }
+        
+    .num{
+        font-size: 4vw;
+    }
+        
+    .forecastday{
+        font-size: 5vw;
+        font-weight: 600;
+    }
+        
+    .forecastcond{
+        font-size: 4vw;
+    }
+        
+    .forecasttemp{
+        font-size: 4vw;
+    }
+}

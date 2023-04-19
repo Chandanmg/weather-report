@@ -1,0 +1,108 @@
+<div class="home" fxLayoutAlign="center center">
+    <mat-card>
+        <div fxLayout="column">
+            <div fxLayout fxLayoutAlign="center center" fxLayout style="width: 100%;" fxLayoutGap="3%" >
+                <div>
+                    <input style="background-color: rgb(178, 246, 253);" matInput type="text" placeholder="Enter Name Here" [(ngModel)]="name" name="name">
+                </div>
+                <div>
+                    <button mat-raised-button class="but" (click)="search(name)">Search</button>
+                </div>
+            </div>
+            <!-- <div fxLayoutAlign="center center" style="color: rgb(232, 4, 4);" *ngIf="posts && posts.cod !== 200">Not Found</div> -->
+
+            <!-- Name -->
+            <div fxLayoutAlign="center center" style="margin-top: 8%; margin-bottom: 8%;">
+                <span class="name">{{posts.name | uppercase}}</span>
+            </div>
+
+            <!-- condition -->
+            <div  fxLayoutAlign="center center" style="margin-top: 2%;">
+                <span class="condition">{{posts && posts.weather && this.posts.weather[0].main | uppercase}}</span> 
+            </div>
+
+            <!-- conditions icon -->
+            <div fxLayoutAlign="center center" style="margin-bottom: 2%;" *ngIf="posts && posts.weather && this.posts.weather[0].main === 'Smoke'">
+                <span style="width: 15%;">
+                    <img class="image" src="../../../assets/images/forecast.png">
+                    <!-- <mat-icon style="color:rgb(224, 225, 226); font-size: 3.5vw;">wb_cloudy</mat-icon> -->
+                </span>
+            </div>
+            <div fxLayoutAlign="center center" style="margin-bottom: 2%;" *ngIf="posts && posts.weather && this.posts.weather[0].main === 'Clouds'">
+                <span style="width: 15%;">
+                    <img class="image" src="../../../assets/images/clouds.png">
+                    <!-- <mat-icon style="color:rgb(224, 225, 226); font-size: 3.5vw;">wb_cloudy</mat-icon> -->
+                </span>
+            </div>
+            <div fxLayoutAlign="center center" style="margin-bottom: 2%;" *ngIf="posts && posts.weather && this.posts.weather[0].main === 'Haze'">
+                <span style="width: 15%;">
+                    <img class="image" src="../../../assets/images/haze.png">
+                    <!-- <mat-icon style="color:rgb(224, 225, 226); font-size: 3.5vw;">wb_cloudy</mat-icon> -->
+                </span>
+            </div>
+            <div fxLayoutAlign="center center" style="margin-bottom: 2%;" *ngIf="posts && posts.weather && this.posts.weather[0].main === 'Clear'">
+                <span style="width: 15%;">
+                    <img class="image" src="../../../assets/images/sun.png">
+                    <!-- <mat-icon style="color:rgb(224, 225, 226); font-size: 3.5vw;">wb_sunny</mat-icon> -->
+                </span>
+            </div>
+            <div fxLayoutAlign="center center" style="margin-bottom: 2%;" *ngIf="posts && posts.weather && this.posts.weather[0].main === 'Rain'">
+                <span style="width: 15%;">
+                    <img class="image" src="../../../assets/images/rain.png">
+                    <!-- <mat-icon style="color:rgb(224, 225, 226); font-size: 3.5vw;">line_style</mat-icon> -->
+                </span>
+            </div>
+
+            <!-- temperature -->
+            <div  fxLayoutAlign="center center" style="margin-top: 2%; margin-bottom: 2%;">
+                <span class="degree">{{this.posts.temp_celcius}} &#8451;</span>
+                <!-- <span class="deg">&deg;</span> -->
+            </div>
+
+            <!-- max and min -->
+            <div fxLayout fxLayoutAlign="center center">
+                <div fxLayout="column" fxLayoutAlign="center center">
+                    <div>
+                        <span class="minmax">Min</span>
+                    </div>
+                    <div>
+                        <span class="num">{{this.posts.temp_min}} &#8451;</span>
+                    </div>
+                </div>
+                <div class="vertical-divider">
+                </div>
+                <div fxLayout="column" fxLayoutAlign="center center">
+                    <div>
+                        <span class="minmax">Max</span>
+                    </div>
+                    <div>
+                        <span class="num">{{this.posts.temp_max}} &#8451;</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div>
+                <div style="position: absolute; bottom: 0; width: 100%;" fxLayout="column" >
+                    <div fxLayoutAlign="left center" style="margin-top: 6%; margin-bottom: 2%;">
+                        <span class="forecast">5 Days Forecast :</span>
+                    </div>
+                    <div fxLayout fxLayoutAlign="left center" fxLayoutGap="5%" style="margin-bottom: 4%;">
+                        <div *ngFor="let day of forecast | keyvalue">
+                            <div fxLayoutAlign="center center">
+                                <span class="forecastday">{{ day.key | date:'d'}}</span>
+                            </div>
+                            <div fxLayoutAlign="center center">
+                                <span class="forecastcond">{{ day.value.weather[0].main }}</span>
+                            </div>
+                            <div fxLayoutAlign="center center">
+                                <span class="forecasttemp">{{ (day.value.main.temp - 273.15).toFixed(1) }} &#8451;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </mat-card>
+</div>
